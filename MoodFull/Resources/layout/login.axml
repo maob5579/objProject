@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_main">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:gravity="center"
+		android:layout_centerInParent="true">
+
+		<TextView android:text="Username:"
+		android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		/>
+
+		<EditText
+        android:id="@+id/usernameEditText"
+        android:layout_width="match_parent"
+        android:imeOptions="actionGo"
+        android:inputType="text"
+        android:layout_height="wrap_content" />
+
+		<TextView android:text="Password:"
+		android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		/>
+
+	<EditText
+        android:id="@+id/paswordEditText"
+        android:layout_width="match_parent"
+        android:imeOptions="actionGo"
+        android:inputType="text"
+        android:layout_height="wrap_content"
+		android:password="true"/>
+
+		<Button
+		android:id="@+id/loginButton"
+		android:onClick="loginButton_OnClick"
+		android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:text="Login"/>
+
+	</LinearLayout>
+
+	
+
+</RelativeLayout>
