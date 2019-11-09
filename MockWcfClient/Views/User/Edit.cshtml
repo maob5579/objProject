@@ -1,0 +1,101 @@
+﻿
+@{
+    Layout = null;
+
+}
+
+@model MockWcfClient.ViewModels.UserViewModel
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Edit</title>
+
+</head>
+
+<body>
+
+    @using (Html.BeginForm("Edit", "User"))
+
+    {
+
+        <table cellpadding="2" cellspacing="2">
+
+            <tr>
+
+                <td>@Html.LabelFor(model => model.User.UserId)</td>
+
+                <td>
+
+                    @Html.ValueFor(model => model.User.UserId)
+
+                    @Html.HiddenFor(model => model.User.UserId)
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>@Html.LabelFor(model => model.User.Username)</td>
+
+                <td>@Html.TextBoxFor(model => model.User.Username)</td>
+
+            </tr>
+
+            <tr>
+
+                <td>@Html.LabelFor(model => model.User.Password)</td>
+
+                <td>@Html.TextBoxFor(model => model.User.Password)</td>
+
+            </tr>
+
+            <tr>
+
+                <td>@Html.LabelFor(model => model.User.FirstName)</td>
+
+                <td>@Html.TextBoxFor(model => model.User.FirstName)</td>
+
+            </tr>
+            <tr>
+
+                <td>@Html.LabelFor(model => model.User.LastName)</td>
+
+                <td>@Html.TextBoxFor(model => model.User.LastName)</td>
+
+            </tr>
+            <tr>
+
+                <td>@Html.LabelFor(model => model.User.UserType)</td>
+
+                <td>@Html.TextBoxFor(model => model.User.UserType)</td>
+
+            </tr>
+
+            <tr>
+
+                <td>&nbsp;</td>
+
+                <td><input type="submit" value="Save" /></td>
+
+            </tr>
+
+        </table>
+
+    }
+
+
+
+    <div>
+
+    </div>
+
+</body>
+
+</html>

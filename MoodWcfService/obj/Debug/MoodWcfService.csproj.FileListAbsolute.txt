@@ -1,0 +1,11 @@
+D:\Users\meta\Desktop\Data11-09\MoodWcfService\bin\MoodWcfService.dll.config
+D:\Users\meta\Desktop\Data11-09\MoodWcfService\bin\MoodWcfService.dll
+D:\Users\meta\Desktop\Data11-09\MoodWcfService\bin\MoodWcfService.pdb
+D:\Users\meta\Desktop\Data11-09\MoodWcfService\bin\EntityFramework.dll
+D:\Users\meta\Desktop\Data11-09\MoodWcfService\bin\EntityFramework.SqlServer.dll
+D:\Users\meta\Desktop\Data11-09\MoodWcfService\bin\EntityFramework.xml
+D:\Users\meta\Desktop\Data11-09\MoodWcfService\bin\EntityFramework.SqlServer.xml
+D:\Users\meta\Desktop\Data11-09\MoodWcfService\obj\Debug\MoodWcfService.csprojAssemblyReference.cache
+D:\Users\meta\Desktop\Data11-09\MoodWcfService\obj\Debug\MoodWcfService.csproj.CopyComplete
+D:\Users\meta\Desktop\Data11-09\MoodWcfService\obj\Debug\MoodWcfService.dll
+D:\Users\meta\Desktop\Data11-09\MoodWcfService\obj\Debug\MoodWcfService.pdb
