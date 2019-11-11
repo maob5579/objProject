@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="MoodWcfService.Services.RestaurantService" CodeBehind="RestaurantService.svc.cs" %>

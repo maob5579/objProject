@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MoodFullModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Evaluation">
+    <Key>
+      <PropertyRef Name="EvaluationId" />
+    </Key>
+    <Property Name="EvaluationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="RestaurantId" Type="Int32" Nullable="false" />
+    <Property Name="MoodRating" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="Experience" Type="Int32" />
+    <NavigationProperty Name="Restaurant" Relationship="Self.FK_Evaluation_Restaurant" FromRole="Evaluation" ToRole="Restaurant" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Evaluation_User" FromRole="Evaluation" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Restaurant">
+    <Key>
+      <PropertyRef Name="RestaurantId" />
+    </Key>
+    <Property Name="RestaurantId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AvgMood" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="AvgPrice" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="AvgExperience" Type="Decimal" Precision="4" Scale="2" />
+    <NavigationProperty Name="Evaluations" Relationship="Self.FK_Evaluation_Restaurant" FromRole="Restaurant" ToRole="Evaluation" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserType" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Evaluations" Relationship="Self.FK_Evaluation_User" FromRole="User" ToRole="Evaluation" />
+  </EntityType>
+  <Association Name="FK_Evaluation_Restaurant">
+    <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="1" />
+    <End Role="Evaluation" Type="Self.Evaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurant">
+        <PropertyRef Name="RestaurantId" />
+      </Principal>
+      <Dependent Role="Evaluation">
+        <PropertyRef Name="RestaurantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Evaluation_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Evaluation" Type="Self.Evaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Evaluation">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MoodFullEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Evaluations" EntityType="Self.Evaluation" />
+    <EntitySet Name="Restaurants" EntityType="Self.Restaurant" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_Evaluation_Restaurant" Association="Self.FK_Evaluation_Restaurant">
+      <End Role="Restaurant" EntitySet="Restaurants" />
+      <End Role="Evaluation" EntitySet="Evaluations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Evaluation_User" Association="Self.FK_Evaluation_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Evaluation" EntitySet="Evaluations" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
