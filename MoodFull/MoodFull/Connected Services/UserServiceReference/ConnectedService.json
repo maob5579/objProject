@@ -1,0 +1,37 @@
+﻿{
+  "ProviderId": "Microsoft.VisualStudio.ConnectedService.Wcf",
+  "Version": "15.0.30730.948",
+  "ExtendedData": {
+    "inputs": [
+      "http://localhost:53772/Services/UserService.svc"
+    ],
+    "collectionTypes": [
+      "System.Array",
+      "System.Collections.Generic.Dictionary`2"
+    ],
+    "namespaceMappings": [
+      "*, UserServiceReference"
+    ],
+    "references": [
+      "D:\\Users\\meta\\Desktop\\MoodFullNew\\objProject\\MoodFull\\MoodFull\\bin\\Debug\\netstandard2.0\\EntityFramework.dll",
+      "D:\\Users\\meta\\Desktop\\MoodFullNew\\objProject\\MoodFull\\MoodFull\\bin\\Debug\\netstandard2.0\\MoodWcfService.dll",
+      "Newtonsoft.Json, {Newtonsoft.Json, 12.0.3}",
+      "System.Reflection.DispatchProxy, {System.Reflection.DispatchProxy, 4.5.0}",
+      "System.Security.AccessControl, {System.Security.AccessControl, 4.5.0}",
+      "System.Security.Cryptography.Xml, {System.Security.Cryptography.Xml, 4.5.0}",
+      "System.Security.Permissions, {System.Security.Permissions, 4.5.0}",
+      "System.Security.Principal.Windows, {System.Security.Principal.Windows, 4.5.0}",
+      "System.ServiceModel, {System.ServiceModel.Primitives, 4.6.0}",
+      "System.ServiceModel.Duplex, {System.ServiceModel.Duplex, 4.4.4}",
+      "System.ServiceModel.Http, {System.ServiceModel.Http, 4.4.4}",
+      "System.ServiceModel.NetTcp, {System.ServiceModel.NetTcp, 4.4.4}",
+      "System.ServiceModel.Primitives, {System.ServiceModel.Primitives, 4.6.0}",
+      "System.ServiceModel.Security, {System.ServiceModel.Security, 4.4.4}",
+      "Xamarin.Forms.Core, {Xamarin.Forms, 3.4.0.1008975}",
+      "Xamarin.Forms.Platform, {Xamarin.Forms, 3.4.0.1008975}",
+      "Xamarin.Forms.Xaml, {Xamarin.Forms, 3.4.0.1008975}"
+    ],
+    "targetFramework": "netstandard2.0",
+    "typeReuseMode": "All"
+  }
+}

@@ -1,0 +1,27 @@
+﻿{
+  "ProviderId": "Microsoft.VisualStudio.ConnectedService.Wcf",
+  "Version": "15.0.30730.948",
+  "GettingStartedDocument": {
+    "Uri": "https://go.microsoft.com/fwlink/?linkid=858517"
+  },
+  "ExtendedData": {
+    "inputs": [
+      "http://localhost:53772/Services/EvaluationService.svc"
+    ],
+    "collectionTypes": [
+      "System.Array",
+      "System.Collections.Generic.Dictionary`2"
+    ],
+    "namespaceMappings": [
+      "*, EvaluationServiceReference"
+    ],
+    "references": [
+      "Newtonsoft.Json, {Newtonsoft.Json, 12.0.3}",
+      "Xamarin.Forms.Core, {Xamarin.Forms, 3.4.0.1008975}",
+      "Xamarin.Forms.Platform, {Xamarin.Forms, 3.4.0.1008975}",
+      "Xamarin.Forms.Xaml, {Xamarin.Forms, 3.4.0.1008975}"
+    ],
+    "targetFramework": "netstandard2.0",
+    "typeReuseMode": "All"
+  }
+}

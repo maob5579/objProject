@@ -26,6 +26,12 @@ namespace MoodWcfService.IServices
         User_ GetUserById(string userId);
 
         [OperationContract]
+        [WebInvoke(Method = "GET",
+            ResponseFormat = WebMessageFormat.Json,
+            UriTemplate = "/SearchUser/{username}/{password}")]
+        User_ SearchUser(string username, string password);
+
+        [OperationContract]
         [WebInvoke(Method = "POST",
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json,

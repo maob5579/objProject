@@ -46,6 +46,22 @@ namespace MoodWcfService.Services
             }
         }
 
+        public User_ SearchUser(string username, string password)
+        {
+            using (MFDatabaseEntities moodFullDb = new MFDatabaseEntities())
+            {
+                return moodFullDb.Users.Where(x => x.Username == username && x.Password == password).Select(x => new User_
+                {
+                    UserId = x.UserId,
+                    Username = x.Username,
+                    Password = x.Password,
+                    FirstName = x.FirstName,
+                    LastName = x.LastName,
+                    UserType = x.UserType
+                }).FirstOrDefault();
+            }
+        }
+
         public bool CreateUser(User_ user)
         {
             using (MFDatabaseEntities moodFullDb = new MFDatabaseEntities())
