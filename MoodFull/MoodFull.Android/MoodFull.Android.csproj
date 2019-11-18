@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="EntityFramework">
+      <Version>6.4.0-preview3-19553-01</Version>
+    </PackageReference>
+    <PackageReference Include="System.Configuration.ConfigurationManager">
+      <Version>4.7.0-preview3.19551.4</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="27.0.2.1" />
@@ -96,12 +102,6 @@
     <Folder Include="Resources\drawable-xxxhdpi\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MoodFull\MoodFull.csproj">
-      <Project>{EB2C937D-5399-4FA4-931C-20BC066910D1}</Project>
-      <Name>MoodFull</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\layout\CameraLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -120,6 +120,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ToggleCameraButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MoodFull\MoodFull.csproj">
+      <Project>{64490496-941f-4ca2-bc56-883a6a445ad9}</Project>
+      <Name>MoodFull</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

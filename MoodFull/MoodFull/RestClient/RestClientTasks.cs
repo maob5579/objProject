@@ -36,7 +36,8 @@ namespace MoodFull.RestClient
             try
             {
                 var httpClient = new HttpClient();
-                var json = await httpClient.GetStringAsync(Url + url + "/" + username + "/" + password);
+                string json = await httpClient.GetStringAsync("iewfjfjfeiofewi" + url + "/" + username + "/" + password);
+              
             }
             catch (ArgumentNullException)
             {
@@ -77,7 +78,7 @@ namespace MoodFull.RestClient
             var response = await httpClient.SendAsync(request);
             return response.IsSuccessStatusCode;
         }
-    */
+    
 
     }
 }
