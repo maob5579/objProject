@@ -16,6 +16,9 @@ namespace MoodFull.ViewModels
         string confirmPassword;
         string name;
         string lastName;
+        Services.UserService _userService = new Services.UserService();
+        Models.User _user = new Models.User();
+
         
 
         public string Username { get => username; set => username = value; }
@@ -39,24 +42,29 @@ namespace MoodFull.ViewModels
             }
         }
 
-        private void Register()
+        private async void Register()
         {
             if (!PasswordMatches(Password,ConfirmPassword))
             {
-                Application.Current.MainPage.DisplayAlert("Error", "Password doesn't match", "OK");
+               await Application.Current.MainPage.DisplayAlert("Error", "Password doesn't match", "OK");
                 return;
             }
             if (IsEmptyFields())
             {
-                Application.Current.MainPage.DisplayAlert("Error", "Fields cannot be empty", "OK");
+               await Application.Current.MainPage.DisplayAlert("Error", "Fields cannot be empty", "OK");
                 return;
             }
 
+            _user.Username = Username;
+            _user.Password = Password;
+            _user.FirstName = Name;
+            _user.LastName = LastName;
 
-            DataCollections.AddUser(Username, Password, Name, LastName);
-            Application.Current.MainPage.DisplayAlert("Success", "", "OK");
+           await _userService.PostUserAsync(_user);
 
-            Application.Current.MainPage.Navigation.PushAsync(new LoginPage());
+          await  Application.Current.MainPage.DisplayAlert("Success", "", "OK");
+
+          await  Application.Current.MainPage.Navigation.PushAsync(new LoginPage());
         }
 
         public bool IsEmptyFields()
